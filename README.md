@@ -1,127 +1,91 @@
-# Trực Quan Hóa Các Thuật Toán Tìm Kiếm Áp Dụng Vào Bài Toán Máy Hút Bụi
+# Bài Tập Về Nhà - Môn Nhập Môn Trí Tuệ Nhân Tạo
 
-## Giới thiệu
-Project này mô phỏng và trực quan hóa quá trình hoạt động của các thuật toán tìm kiếm trong bài toán **Vacuum Cleaner Problem (Máy hút bụi)** thuộc lĩnh vực Trí tuệ nhân tạo (AI).
-
-Chương trình cho phép người dùng:
-- Tạo môi trường dạng ma trận
-- Đặt vị trí máy hút bụi và các ô bẩn
-- Quan sát trực tiếp cách các thuật toán tìm kiếm hoạt động
-- So sánh hiệu quả giữa các thuật toán
-
-Các thuật toán được áp dụng:
-- BFS (Breadth-First Search)
-- DFS (Depth-First Search)
-- IDS (Iterative Deepening Search)
-- UCS (Uniform Cost Search)
+Chào mừng bạn đến với kho lưu trữ (repository) bài tập về nhà môn Nhập môn Trí tuệ Nhân tạo của mình. Dự án này tập trung vào việc mô phỏng và giải quyết bài toán **"Robot máy hút bụi thông minh"** thông qua việc triển khai các nhóm thuật toán tìm kiếm từ cơ bản đến nâng cao, đi kèm với một công cụ trực quan hóa (Visualizer) sinh động.
 
 ---
 
-# Mục tiêu của project
-- Hiểu cách hoạt động của các thuật toán tìm kiếm
-- Minh họa trực quan quá trình duyệt trạng thái
-- So sánh:
-  - Số bước tìm kiếm
-  - Đường đi tìm được
-  - Hiệu suất của từng thuật toán
+## 🎯 Mục Tiêu Của Project
+
+* **Hiểu sâu lý thuyết:** Nắm vững nguyên lý hoạt động, cơ chế duyệt cây/đồ thị trạng thái của các thuật toán tìm kiếm trong AI.
+* **Minh họa trực quan:** Trực quan hóa quá trình duyệt trạng thái trên không gian ma trận theo thời gian thực để dễ dàng quan sát cách các thuật toán hoạt động.
+* **So sánh và Đánh giá hiệu suất:** Đưa ra cái nhìn khách quan về hiệu quả của từng thuật toán dựa trên 3 tiêu chí cốt lõi:
+  * **Số bước tìm kiếm:** Tổng số trạng thái đã duyệt (độ phức tạp không gian/thời gian thực tế).
+  * **Đường đi tìm được:** Chiều dài hoặc chi phí của lời giải tìm được (tính tối ưu).
+  * **Hiệu suất tổng thể:** Tốc độ thực thi và khả năng phân bổ bộ nhớ của từng thuật toán.
 
 ---
 
-# Công nghệ sử dụng
-- Ngôn ngữ: Python
-- Giao diện: Tkinter
-- Thuật toán AI Search
+## 📝 Mô Tả Bài Toán
+
+Bài toán mô phỏng một Robot máy hút bụi hoạt động trong một môi trường không gian dạng lưới (Ma trận kích thước **4x4**), bao gồm các thành phần:
+* **Ô sạch (Clean):** Đường đi trống mà robot có thể di chuyển qua.
+* **Ô bẩn (Dirty):** Vị trí chứa rác cần được dọn dẹp.
+* **Vị trí bắt đầu (Start):** Tọa độ xuất phát ban đầu của Robot.
+
+### Nhiệm vụ của Robot:
+1. Di chuyển thông minh qua các ô trong ma trận lưới.
+2. Hút sạch toàn bộ các ô bẩn xuất hiện trong môi trường.
+3. Tìm ra chuỗi đường đi phù hợp và tối ưu nhất dựa trên thuật toán tìm kiếm được lựa chọn.
+
+### Các hành động (Actions) có thể thực hiện:
+* **Di chuyển lên (Up)**
+* **Di chuyển xuống (Down)**
+* **Di chuyển trái (Left)**
+* **Di chuyển phải (Right)**
+* **Hút bụi (Suck):** Thực hiện tại vị trí hiện tại nếu ô đó có vết bẩn.
 
 ---
 
-# Mô tả bài toán
-Máy hút bụi hoạt động trong một môi trường dạng lưới gồm:
-- Ô sạch
-- Ô bẩn
-- Vị trí bắt đầu của robot
+## 🧠 Các Thuật Toán Đã Triển Khai
 
-Nhiệm vụ:
-- Di chuyển qua các ô
-- Hút sạch toàn bộ ô bẩn
-- Tìm đường đi phù hợp dựa trên thuật toán tìm kiếm
+Hệ thống triển khai đa dạng các chiến lược tìm kiếm từ cơ bản (mù) cho đến nâng cao (có thông tin và môi trường phức tạp):
 
-Các hành động:
-- Di chuyển lên
-- Di chuyển xuống
-- Di chuyển trái
-- Di chuyển phải
-- Hút bụi tại vị trí hiện tại
+### 1. Nhóm thuật toán tìm kiếm mù (Uninformed Search)
+Phù hợp khi robot không có thông tin về khoảng cách hay chi phí tới mục tiêu:
+* **BFS (Breadth-First Search):** Tìm kiếm theo chiều rộng, bảo đảm tìm thấy đường đi ngắn nhất (khi chi phí các bước bằng nhau).
+* **DFS (Depth-First Search):** Tìm kiếm theo chiều sâu, tiết kiệm bộ nhớ nhưng không đảm bảo tìm được đường đi tối ưu.
+* **IDS (Iterative Deepening Search):** Tìm kiếm sâu dần, kết hợp ưu điểm tiết kiệm bộ nhớ của DFS và tính tối ưu của BFS.
+* **UCS (Uniform Cost Search):** Tìm kiếm với chi phí đồng đều, tối ưu khi chi phí di chuyển giữa các ô có sự khác biệt.
 
+### 2. Nhóm thuật toán tìm kiếm có thông tin (Informed Search)
+Sử dụng hàm Heuristic (ước lượng toán học) để tối ưu hóa và tăng tốc độ tìm kiếm:
+* **Greedy Best-First Search:** Tìm kiếm tham lam, luôn ưu tiên chọn trạng thái có vẻ gần mục tiêu nhất dựa trên hàm Heuristic.
+* **A\* Search:** Thuật toán tìm kiếm tối ưu phổ biến, kết hợp chi phí thực tế từ điểm đầu $g(n)$ và chi phí ước lượng đến đích $h(n)$.
+* **IDA\* (Iterative Deepening A\*):** Phiên bản cải tiến nâng cấp từ A\*, giúp tối ưu hóa không gian bộ nhớ bằng cách duyệt sâu dần kết hợp giới hạn chi phí.
 
-# Các thuật toán được sử dụng
+### 3. Nhóm thuật toán leo đồi (Hill Climbing)
+Các thuật toán tìm kiếm cục bộ dựa trên việc liên tục di chuyển về phía có trạng thái tốt hơn:
+* **Basic Hill Climbing:** Leo đồi cơ bản.
+* **Steepest-Ascent Hill Climbing:** Leo đồi dốc nhất (đánh giá toàn bộ các trạng thái lân cận và chỉ chọn trạng thái tối ưu nhất).
+* **Stochastic Hill Climbing:** Leo đồi ngẫu nhiên (chọn ngẫu nhiên một trong số các hướng đi tốt hơn hướng hiện tại).
+* **Random-Restart Hill Climbing:** Leo đồi khởi tạo ngẫu nhiên (tự động thiết lập lại vị trí ban đầu ngẫu nhiên nếu rơi vào cực trị cục bộ để tiếp tục tìm kiếm giải pháp toàn cục).
 
-## 1. BFS (Breadth-First Search)
-- Duyệt theo chiều rộng
-- Đảm bảo tìm được lời giải ngắn nhất nếu chi phí bằng nhau
-- Tốn nhiều bộ nhớ
-
-## 2. DFS (Depth-First Search)
-- Duyệt theo chiều sâu
-- Tốn ít bộ nhớ hơn BFS
-- Không đảm bảo lời giải tối ưu
-
-## 3. IDS (Iterative Deepening Search)
-- Kết hợp ưu điểm của BFS và DFS
-- Duyệt sâu dần theo từng mức depth
-- Tìm được lời giải tối ưu với chi phí bộ nhớ thấp hơn BFS
-
-## 4. UCS (Uniform Cost Search)
-- Mở rộng node có chi phí nhỏ nhất trước
-- Đảm bảo tìm được đường đi tối ưu
-- Hoạt động tốt khi các hành động có chi phí khác nhau
-- cost được tính bằng cách nếu đi vào ô sạch thì new_cost = cost_parent + 3, ngược lại new_cost = cost_parent + 1
-
-
-# Chức năng chính
-- Tạo ma trận môi trường
-- Sinh ngẫu nhiên ô bẩn
-- Chọn thuật toán cần chạy
-- Hiển thị quá trình tìm kiếm theo thời gian thực
-- Hiển thị:
-  - Frontier
-  - Reached
-  - Đường đi kết quả
-  - Số bước thực hiện
-
-
-# Cách chạy chương trình
-
-
-# Minh họa hoạt động
-- Robot sẽ di chuyển trên ma trận
-- Các ô đã duyệt sẽ được đánh dấu
-- Khi tìm được lời giải, chương trình hiển thị:
-  - Đường đi cuối cùng
-  - Tổng số bước
-  - Trạng thái sạch hoàn toàn
+### 4. Tìm kiếm trong môi trường phức tạp (Searching in Complex Environments)
+* **Trạng thái niềm tin (Belief States):** Mô phỏng trường hợp robot hoạt động trong môi trường không có thông tin hoàn hảo (Partial Observability). Hệ thống xử lý đặc biệt với **2 trạng thái niềm tin ban đầu** để xác định phân bố không gian và đưa ra chuỗi hành động chính xác nhất.
 
 ---
 
-# Kiến thức áp dụng
-Project áp dụng các kiến thức:
-- Artificial Intelligence
-- Search Algorithms
-- State Space Search
-- Data Structures:
-  - Queue
-  - Stack
-  - Priority Queue
-- GUI Programming với Tkinter
+## 💻 Công Nghệ Sử Dụng
 
-# Hướng phát triển
-- Thêm thuật toán A*
-- Thêm Greedy Best First Search
-- Tối ưu giao diện
-- So sánh thời gian chạy giữa các thuật toán
-- Xuất thống kê kết quả
+* **Ngôn ngữ lập trình:** Python
+* **Thư viện giao diện:** Tkinter (Thư viện tích hợp sẵn của Python giúp xây dựng GUI trực quan nhẹ nhàng, mượt mà).
+* **Thuật toán cốt lõi:** AI Search Algorithms (Triển khai logic thuật toán thuần túy).
 
-# Tác giả
-Project được thực hiện nhằm mục đích học tập và nghiên cứu về:
-- Trí tuệ nhân tạo
-- Thuật toán tìm kiếm
-- Trực quan hóa thuật toán bằng Python
+---
+
+## 📸 Demo & Trực Quan Hóa (Visualizer)
+
+Hệ thống sử dụng không gian mô phỏng ma trận **4x4** bằng Tkinter. Bạn có thể dễ dàng theo dõi từng bước chân của robot, các ô đang được duyệt, cũng như quá trình dọn sạch bụi bẩn trên bản đồ.
+
+### Video Minh Họa Hoạt Động
+Dưới đây là video ghi lại quá trình vận hành trực quan của các thuật toán:
+
+<img width="800" height="449" alt="angghi2026-06-18225810-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/09d08488-1d26-48e2-8f88-3509965e1735" />
+
+
+---
+
+## 🛠️ Hướng Dẫn Cài Đặt và Chạy Chương Trình
+
+1. **Clone repository về máy local:**
+   Chạy file visualizer.ipynb sau đó nhập vào ma trận 4x4
