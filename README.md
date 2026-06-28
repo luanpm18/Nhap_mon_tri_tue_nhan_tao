@@ -60,8 +60,23 @@ Các thuật toán tìm kiếm cục bộ dựa trên việc liên tục di chuy
 * **Stochastic Hill Climbing:** Leo đồi ngẫu nhiên (chọn ngẫu nhiên một trong số các hướng đi tốt hơn hướng hiện tại).
 * **Random-Restart Hill Climbing:** Leo đồi khởi tạo ngẫu nhiên (tự động thiết lập lại vị trí ban đầu ngẫu nhiên nếu rơi vào cực trị cục bộ để tiếp tục tìm kiếm giải pháp toàn cục).
 
-### 4. Tìm kiếm trong môi trường phức tạp (Searching in Complex Environments)
-* **Trạng thái niềm tin (Belief States):** Mô phỏng trường hợp robot hoạt động trong môi trường không có thông tin hoàn hảo (Partial Observability). Hệ thống xử lý đặc biệt với **2 trạng thái niềm tin ban đầu** để xác định phân bố không gian và đưa ra chuỗi hành động chính xác nhất.
+### 4. Nhóm Tìm kiếm Mù (Uninformed Search)
+Phù hợp khi tác nhân không có thông tin về khoảng cách hay chi phí tới mục tiêu:
+* **Senseless:** Chiến lược duyệt mù khi không có thông tin định hướng.
+* **Partial:** Tìm kiếm trong môi trường thông tin không đầy đủ.
+* **And/Or Search:** Giải quyết các bài toán có sự lựa chọn giữa các hành động của tác nhân và sự biến đổi của môi trường.
+
+### 5. Nhóm Ràng buộc (CSP - Constraint Satisfaction Problems)
+Giải quyết các bài toán thỏa mãn ràng buộc bằng cách gán giá trị cho các biến sao cho không vi phạm quy tắc:
+* **Backtracking:** Thuật toán quay lui cơ bản.
+* **Forward Checking:** Kiểm tra khả năng vi phạm ràng buộc ngay tại bước gán giá trị hiện tại.
+* **Min-conflict:** Thuật toán tìm kiếm cục bộ tối ưu hóa cho các bài toán CSP quy mô lớn.
+
+### 6. Nhóm Đối kháng (Adversarial Search)
+Giải quyết các bài toán trò chơi có đối thủ (Zero-sum game):
+* **Minimax:** Thuật toán tối ưu cho trò chơi có đối thủ hoàn hảo.
+* **Alpha-Beta Pruning:** Kỹ thuật cắt tỉa giúp giảm số lượng nút cần duyệt trong Minimax.
+* **Expectimax:** Mở rộng cho các trò chơi có yếu tố ngẫu nhiên (may rủi).
 
 ---
 
@@ -78,9 +93,22 @@ Các thuật toán tìm kiếm cục bộ dựa trên việc liên tục di chuy
 Hệ thống sử dụng không gian mô phỏng ma trận **4x4** bằng Tkinter. Bạn có thể dễ dàng theo dõi từng bước chân của robot, các ô đang được duyệt, cũng như quá trình dọn sạch bụi bẩn trên bản đồ.
 
 ### Video Minh Họa Hoạt Động
-Dưới đây là video ghi lại quá trình vận hành trực quan của các thuật toán:
+1. Dưới đây là video ghi lại quá trình vận hành trực quan của các thuật toán:
 
 <img width="800" height="449" alt="angghi2026-06-18225810-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/09d08488-1d26-48e2-8f88-3509965e1735" />
+
+2. Bài toán Tô màu tỉnh An Giang (CSP)
+Mô phỏng việc tô màu bản đồ hành chính tỉnh An Giang sao cho không có hai huyện/thành phố nào kề nhau có cùng màu.
+
+<img width="400" height="225" alt="Đang ghi 2026-06-28 100322" src="https://github.com/user-attachments/assets/a7b781c2-75b6-4fb4-a3af-78e3fc6db12d" />
+
+
+3. Trò chơi Caro (Đối kháng)
+Robot thi đấu với người chơi dựa trên các thuật toán đối kháng để tìm nước đi tốt nhất.
+
+<img width="400" height="225" alt="Đang ghi 2026-06-28 100843" src="https://github.com/user-attachments/assets/a59ef3d6-9aa9-4161-888f-624f014a2646" />
+
+
 
 
 ---
