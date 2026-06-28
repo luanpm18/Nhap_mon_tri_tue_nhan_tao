@@ -100,13 +100,14 @@ Hệ thống sử dụng không gian mô phỏng ma trận **4x4** bằng Tkinte
 2. Bài toán Tô màu tỉnh An Giang (CSP)
 Mô phỏng việc tô màu bản đồ hành chính tỉnh An Giang sao cho không có hai huyện/thành phố nào kề nhau có cùng màu.
 
-<img width="400" height="225" alt="Đang ghi 2026-06-28 100322" src="https://github.com/user-attachments/assets/a7b781c2-75b6-4fb4-a3af-78e3fc6db12d" />
+
+<img width="800" height="450" alt="Video Project 1" src="https://github.com/user-attachments/assets/c02afd13-1f1b-4ab0-be55-daa26f576c28" />
 
 
 3. Trò chơi Caro (Đối kháng)
 Robot thi đấu với người chơi dựa trên các thuật toán đối kháng để tìm nước đi tốt nhất.
 
-<img width="400" height="225" alt="Đang ghi 2026-06-28 100843" src="https://github.com/user-attachments/assets/a59ef3d6-9aa9-4161-888f-624f014a2646" />
+<img width="800" height="450" alt="Đang ghi 2026-06-28 100843" src="https://github.com/user-attachments/assets/4d87dc8f-2339-495f-8267-3dd767693590" />
 
 
 
@@ -117,3 +118,7 @@ Robot thi đấu với người chơi dựa trên các thuật toán đối khá
 
 1. **Clone repository về máy local:**
    Chạy file visualizer.ipynb sau đó nhập vào ma trận 4x4
+
+   Chạy file graph_coloring_backtracking_foward.py
+
+   Chạy minimax_alpha-beta_expectimax.py
