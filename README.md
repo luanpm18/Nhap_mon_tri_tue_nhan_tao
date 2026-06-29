@@ -1,6 +1,6 @@
 # Bài Tập Về Nhà - Môn Nhập Môn Trí Tuệ Nhân Tạo
 
-Chào mừng bạn đến với kho lưu trữ (repository) bài tập về nhà môn Nhập môn Trí tuệ Nhân tạo của mình. Dự án này tập trung vào việc mô phỏng và giải quyết bài toán **"Robot máy hút bụi thông minh"** thông qua việc triển khai các nhóm thuật toán tìm kiếm từ cơ bản đến nâng cao, đi kèm với một công cụ trực quan hóa (Visualizer) sinh động.
+Chào mừng đến với kho lưu trữ (repository) bài tập về nhà môn Nhập môn Trí tuệ Nhân tạo của mình. Dự án này tập trung vào việc mô phỏng và giải quyết bài toán **"Robot máy hút bụi thông minh"** ngoài ra còn có tô màu bản đồ và Tic Tac Toe thông qua việc triển khai các nhóm thuật toán tìm kiếm từ cơ bản đến nâng cao, đi kèm với một công cụ trực quan hóa (Visualizer) sinh động.
 
 ---
 
